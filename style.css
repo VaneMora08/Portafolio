@@ -1,12 +1,7 @@
-/*CSS Reset / Normalize*/
-/* Hemos disponibilizado el básico de reset de estilos. Si quieren, añadan más informaciones 
-en las secciones señaladas */
-/*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
-coloque nas sessões indicadas*/
+
 
 :root{
-    /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
-    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
+    
     --cor-de-fundo: #F5F5F5;
     --cor-de-link: #000;
     --cor-principal: #FF6B6B;
@@ -209,6 +204,11 @@ section.about {
 /*Sección Skills*/
 
 /* Estilos para la sección "Skills" */
+section.skills{
+background-color: #FFFFFF;
+padding: 10px;
+
+}
 .skills__title {
     text-align: center;
     margin-top: 1em;
@@ -278,9 +278,12 @@ h4 {
 }
 
 /* Estilos para la sección de habilidades adicionales */
+section.additional-skills{
+    background-color: #f8f8f8;
+
+}
 .additional-skills {
     padding: 2rem 0;
-    background-color: #f8f8f8;
     text-align: center;
 }
 
@@ -335,110 +338,165 @@ h4 {
 .hobbies__box{
     list-style: none;
     text-align: center;
+    background-color: #cbf08f;
 }
 /* Experiencia Académica*/
 
-section.academic{
-    display: grid;
-    background-color: #EAF2FD;
-    margin-top: 3rem;
-    grid-template-columns: 10.55% 1fr 10.55%;
-    grid-template-rows: 4rem 1fr;
-    padding: 3rem;
+.academic {
+    padding: 2rem 1rem;
+    background-color: #FFFFFF;
 }
 
 .academic__title {
-    justify-self: center;
-    grid-area: 1 / 2;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
 }
 
 .academic__courses {
-    grid-area: 2 / 2;
-    justify-self: center;
-    align-self: center  ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.academic__courses__box {
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    width: 300px;
+    text-align: center;
+}
+
+.academic__courses__box:hover {
+    transform: translateY(-10px);
 }
 
 .academic__courses__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
 }
 
-.academic__courses__item__img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFFFFF;
-    width: 368px;
-    height: 286px;
+.academic__courses__item__img img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
-.academic__courses__item__title h4, .academic__courses__item__subtitle p {
-    margin: 8px 0;
+.academic__courses__item__title h4 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.academic__courses__item__subtitle p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
 }
 
 /* experiencia*/
 
-section.experience{
+/* General Styles */
+.experience, .projects {
+    padding: 2rem 1rem;
+    background-color: #f0f0f0;
+}
+
+/* Titles */
+.experience__section__title, .projects__section__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Grid Layout */
+.experience__grid, .projects__grid {
     display: grid;
-    grid-template-columns: 10.55% 1fr 10.55%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
 }
 
-.experience__section__main {
-    grid-column: 2;
-}
-
-.experience__section__title {
-    display: flex;
-    justify-content: center;
-}
-
+/* Experience Box */
 .experience__box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
+    background-color: #92c5f5d7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
 }
 
-.experience__box:nth-child(2n+1) {
-    flex-direction: row-reverse;
+.experience__box:hover {
+    transform: translateY(-10px);
 }
 
 .experience__img {
-    width: 752px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
-.experience__text {
-    font-size: 1rem;
-    font-weight: 300;
+.experience__title {
+    font-size: 1.25rem;
+    color: #333;
 }
 
-.experiencia__botao--repo {
-    background-color: #FFFFFF;
-    border: 2px solid #2A7AE4;
+/* Project Box */
+.project__box {
+    background-color: #92c5f5d7;
     border-radius: 10px;
-    color: #2A7AE4;
-    font-family: 'Raleway';
-    height: 51px;
-    width: 105px;
-    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
 }
 
-.experience__botao--demo, .formcontato__botao {
-    background-color: #2A7AE4;
+.project__box:hover {
+    transform: translateY(-10px);
+}
+
+.project__title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.project__links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project__button {
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-family: 'Raleway';
-    height: 51px;
-    width: 105px;
-    font-size: 16px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+.project__button:hover {
+    background-color: #0056b3;
+}
+
 
 /*Contacto*/
 
 section.formcontato{
-    background-color: #EAF2FD;
+    background-color: rgba(205, 155, 241, 0.527);
     padding: 66px 0;
     display: grid;
     grid-template-columns: 10.55% 1fr 10.55%;
@@ -485,8 +543,8 @@ section.formcontato{
     padding: 10px;
 }
 
-.formcontato__botao {
-    background-color: #2A7AE4;
+.formcontato__button {
+    background-color: #FF6B6B;
     border: none;
     border-radius: 10px;
     color: #FFFFFF;
@@ -503,6 +561,8 @@ section.footer{
    display: flex;
    margin: 1.5rem 0;
    justify-content: center;
+   background-color: #FF6B6B;
+   color: #FFFFFF;
 }
 
 .footer__rodape {
@@ -516,8 +576,6 @@ section.footer{
     margin-bottom: 0.5rem;
 }
 
-/* Vamos a desafiarnos trabajando con responsividad?
-Utiliza las referencias de los breakpoints @media abajo */
 
 
 /*Tablet*/
